@@ -9,7 +9,7 @@ import { LoginDTO } from './dto/login.dto';
 @Injectable()
 export class AuthService {
   async register(body: RegisterDTO) {
-    const { email, password, username } = body;
+    const { password, username } = body;
 
     const olderUser = await db
       .selectFrom('user')
@@ -18,7 +18,7 @@ export class AuthService {
 
     if (olderUser)
       throw new HttpException(
-        'A user with email address or username already exists',
+        'A user with username already exists',
         HttpStatus.CONFLICT,
       );
 

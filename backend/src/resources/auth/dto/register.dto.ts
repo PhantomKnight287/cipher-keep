@@ -1,9 +1,6 @@
-import { IsAlphanumeric, IsEmail, IsString, MinLength } from 'class-validator';
+import { IsAlphanumeric, IsString, MinLength } from 'class-validator';
 
 export class RegisterDTO {
-  @IsEmail()
-  email: string;
-
   @IsString()
   @IsAlphanumeric()
   username: string;
