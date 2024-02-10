@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* light and dark mode available */
+    color-scheme: light dark;
+
+    --background: #ffffff;
+    --foreground: var(--primary);
+
+    --muted: var(--secondary);
+    --muted-foreground: #8f8ca2;
+
+    --popover: var(--tertiary);
+    --popover-foreground: var(--primary);
+
+    --border: #9c9aac;
+    --input: var(--muted-foreground);
+
+    --card: var(--secondary);
+    --card-foreground: var(--primary);
+
+    --primary: #000000;
+    --primary-foreground: var(--secondary);
+
+    --secondary: #f1f0f5;
+    --secondary-foreground: var(--primary);
+
+    --accent: var(--secondary);
+    --accent-foreground: var(--primary);
+
+    --tertiary: #ffffff;
+    --tertiary-foreground: var(--muted-foreground);
+
+    --red: #ff4f4f;
+    --red-foreground: var(--secondary);
+
+    --blue: #1e75ff;
+    --blue-foreground: var(--primary-foreground);
+
+    --destructive: var(--red);
+    --destructive-foreground: var(--red-foreground);
+
+    --ring: var(--border);
+
+    --radius: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #222229;
+      --foreground: var(--primary);
+
+      --muted: var(--tertiary);
+      --muted-foreground: #909099;
+
+      --accent: var(--border);
+      --accent-foreground: #f1f0f5;
+
+      --popover: var(--tertiary);
+      --popover-foreground: var(--primary);
+
+      --border: #2c2c34;
+      --input: #4e4e56;
+
+      --card: var(--secondary);
+      --card-foreground: var(--primary);
+
+      --primary: #efeff0;
+      --primary-foreground: var(--secondary);
+
+      --secondary: #2d2d35;
+      --secondary-foreground: var(--primary);
+
+      --tertiary: #1d1d23;
+      --tertiary-foreground: var(--muted-foreground);
+
+      --red: #f35953;
+      --red-foreground: var(--primary);
+
+      --blue: #2d77ff;
+      --blue-foreground: var(--secondary-foreground);
+
+      --destructive: var(--red);
+      --destructive-foreground: var(--red-foreground);
+
+      --ring: var(--input);
+    }
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
